@@ -23,6 +23,7 @@ class ShoppingDataBloc{
 
 
     _shoppingDataFetcher.sink.add(shopsList);
+    // return shopsList.data;
   }
 
   dispose(){

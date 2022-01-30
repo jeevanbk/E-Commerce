@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    shoppingDataBloc.fetchShoppingList(1, 10);
+    shoppingDataBloc.fetchShoppingList(1, 5);
   }
   @override
   Widget build(BuildContext context) {
