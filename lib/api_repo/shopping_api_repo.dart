@@ -7,16 +7,17 @@ class ShoppingApiRepo {
 
   Future<ShoppingItemsModel> getLatestShoppingData(int pageNumber,int pageCount) async {
 
-    Map<String, String> encodableData = {
-      'page': "$pageNumber",
-      "perPage-Type":"$pageCount",
+    Map<String, int> encodableData = {
+      'page': pageNumber,
+      "perPage":pageCount,
     };
 
 
 try {
       final response = await http.post(
           Uri.parse("http://205.134.254.135/~mobile/MtProject/api/v1/product_list"),
-          headers: {"token":"eyJhdWQiOiI1IiwianRpIjoiMDg4MmFiYjlmNGU1MjIyY2MyNjc4Y2FiYTQwOGY2MjU4Yzk5YTllN2ZkYzI0NWQ4NDMxMTQ4ZWMz"},
+          headers: {"Content-Type": "application/json",
+            "token":"eyJhdWQiOiI1IiwianRpIjoiMDg4MmFiYjlmNGU1MjIyY2MyNjc4Y2FiYTQwOGY2MjU4Yzk5YTllN2ZkYzI0NWQ4NDMxMTQ4ZWMz"},
         body:jsonEncode(encodableData),
       );
       print("${response.statusCode}");
